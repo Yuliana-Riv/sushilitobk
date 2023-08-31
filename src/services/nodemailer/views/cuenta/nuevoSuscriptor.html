@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Código de autentificación</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        margin: 0px !important;
+        height: 100vh;
+      }
+
+      #app {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #585858;
+        height: inherit;
+      }
+
+      .info {
+        color: #585858;
+        text-align: center;
+        margin-bottom: 3vw;
+      }
+
+      .info h1 {
+        font-family: Arial;
+        font-size: 3.1vw;
+      }
+
+      .info p {
+        font-size: 2.4vw;
+        font-family: Arial;
+      }
+
+      .code {
+        margin-left: 12%;
+        position: relative;
+        display: inline-block;
+        width: 75%;
+        height: 30vw;
+        background-image: url();
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+      .code h2 {
+        font-size: 5vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: Arial;
+        color: #585858;
+        margin-top: 17%;
+      }
+
+      .code img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .pie {
+        margin-top: 5vw;
+        width: 78%;
+        text-align: center;
+      }
+
+      .pie p {
+        color: #8e8e8e;
+        font-family: Arial;
+
+        margin-left: 27%;
+        font-size: 1.6vw;
+        font-style: normal;
+      }
+
+      .container {
+        margin-top: 2vw;
+        width: 41.66666666666667vw;
+        text-align: left;
+        margin: auto;
+      }
+
+      .B1 {
+        height: fit-content;
+        background-color: white;
+      }
+      .B1 img.logo {
+        margin-top: 5.365vw;
+        width: 12.604166666666666vw;
+        height: auto;
+    margin-left: 13vw;
+      }
+      .B1 img.banner {
+        width: 100%;
+      }
+      .B1 img.banner.pc {
+        display: block;
+      }
+      .B1 img.banner.mo {
+        display: none;
+      }
+      .B1F2 {
+        width: 80%;
+        height: auto;
+        background-color: #ffffff;
+        border: 1px solid transparent;
+        border-radius: 10vw;
+        margin: auto;
+        margin-top: 1.6vw;
+      }
+
+      .descr_dos{
+        border: 0.1vw solid gainsboro;
+      }
+      .B1F2 p {
+        font-weight: 700;
+        font-size: 0.8vw;
+        line-height: 99.5%;
+        text-align: center;
+        color: #181818;
+        margin-bottom: 0.42vw;
+        
+      }
+      .B1F2 p.gray {
+        color: #8e8e8e;
+      }
+      .B1F2 p.descr {
+        color: #E40424;
+        font-size: 1.5vw;
+        margin-top: 0.85vw;
+        text-align: center;
+    width: 20vw;
+    margin: auto;
+      }
+      .B1F2 span {
+        font-weight: 800 !important;
+      }
+      .B2 {
+        margin: 2vw auto;
+        width: 80%;
+        height: auto;
+    border: 0.1vw solid gainsboro;
+      }
+      .B2F1 {
+        width: 8.542vw;
+        margin: 0;
+        margin-top: 0;
+        color: #FA8433;
+        font-size: 1.046vw;
+        line-height: 1.406vw;
+        font-weight: 700;
+        text-align: left;
+      }
+      .B2F1 span {
+        font-weight: 800 !important;
+      }
+      .B2F2P {
+        color: #8e8e8e;
+        font-size: 1.046vw;
+        line-height: 1.406vw;
+        font-weight: 500;
+        margin: 0;
+        width: 20vw;
+        text-align: left;
+      }
+      .B2F2 {
+        width: 23vw;
+        height: 3.854166666666667vw;
+        border-radius: 10vw;
+        margin: auto;
+        background-color: #02a552;
+      }
+      .B2F2 p {
+        color: #ffffff;
+        font-size: 1.3020833333333335vw;
+        font-weight: 700;
+        padding-top: 1vw;
+      }
+      .B2F3 {
+        color: #fdcd0a;
+        font-size: 0.9375vw;
+        font-weight: 700;
+        margin-top: 3.3333333333333335vw;
+      }
+      .B2SC {
+        display: flex;
+        justify-content: center;
+        padding: 1.16vw 0 1.16vw;
+        border-bottom: 0.01vw solid #2DC7CA;
+        width: fit-content;
+        margin: auto;
+      }
+      .B2SC:last-child {
+        border-bottom: 0 !important;
+      }
+      .FOO {
+        margin-top: 6.2vw;
+        background: #FA8433;
+        padding: 1.2vw 0;
+      }
+      .FOO a,
+      .FOO p {
+        color: white;
+        font-size: 0.902vw;
+        line-height: 1.063vw;
+        text-decoration-color: transparent;
+        margin: 0 0 0.6vw;
+      }
+      .FOO1,
+      .FOO2 {
+        margin: auto;
+        width: 12vw;
+      }
+      .FOO2 {
+        padding-top: 1.6vw;
+        margin-top: 1.7vw;
+        border-top: 0.01vw solid white;
+      }
+      .FOO1 img {
+        width: 5vw;
+        margin-bottom: 1vw;
+      }
+      .colimg img {
+    width: 14.266vw;
+    height: 14.266vw;
+}
+.B1F2 p.descr2 {
+    font-weight: 400;
+    font-size: 0.9vw;
+    line-height: 99.5%;
+    text-align: center;
+    color: black;
+    margin: 3vw auto;
+    width: 26vw;
+}
+.B1F2 p.descr.dos {
+    margin: 5vw auto;
+}
+.colimg {
+    margin: 0 0 5vw;
+}
+.colimg img:nth-child(1) {
+    /**margin-right: 2vw;**/
+}
+
+.sec1{
+  background-color: #181818;
+}
+
+.tit{
+  color: white;
+  font-size: 1.35vw;
+  text-align: center;
+  font-weight: bold;
+}
+
+.liga{
+  color: white;
+  font-size: 1vw;
+  text-align: center;
+}
+
+.imgpc{
+  margin-left: 16vw;
+}
+
+.imgpc1{
+  margin-left: 1vw;
+}
+
+.hr{
+  color: #008f39;
+}
+
+.dir{
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.dir1{
+  color: white;
+  text-align: center;
+  font-size:0.96vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.tel{
+  color: white;
+  text-align: center;
+  font-size: 1vw;
+  margin-bottom: 2vw;
+}
+
+.imglog{
+margin-left: 15vw;
+margin-top: 4vw;
+margin-bottom: 3vw;
+}
+
+
+
+
+
+      @media (max-width: 768px) {
+      .colimg img {
+    width: 35.266vw;
+    height: 35.266vw;
+}
+.B1F2 p.descr2 {
+    font-weight: 400;
+    font-size: 5.314009661835748vw;
+    line-height: 99.5%;
+    text-align: center;
+    color: black;
+    margin: 19vw 0;
+    width: auto;
+}
+.B1F2 p.descr.dos {
+    margin: 18vw 0;
+}
+.colimg {
+    margin: 0 0 5vw;
+}
+.colimg img:nth-child(1) {
+    margin-right: 6vw;
+}
+        .container {
+          margin-top: 2vw;
+          width: 100vw;
+        }
+        .B1 {
+          height: fit-content;
+        }
+        .B1 img.banner.pc {
+          display: none;
+        }
+        .B1 img.banner.mo {
+          display: block;
+        }
+        .B1 img.logo {
+            margin-top: 22.897436vw;
+    margin-left: 15vw;
+    width: 62.051282vw;
+    height: auto;
+        }
+        .B1F2 p.descr {
+          color: #E40424;
+          font-size: 7.1vw;
+          margin: 0.85vw auto 0;
+          margin-top: 12.077294685990339vw;
+          margin-bottom: 12.077294685990339vw;
+          width: 74vw;
+        }
+        .B1F2 {
+          width: 79.23076923076923vw;
+          height: auto;
+          border-radius: 10vw;
+          margin-top: 8.5vw;
+        }
+        .B1F2 p {
+          font-size: 4.128205vw;
+          line-height: 8.128205vw;
+          margin-top: 4vw;
+        }
+        .B2 {
+
+            height: auto;
+    background-color: #ffffff; 
+    width: 90%;
+    padding: 8% 8% 0;
+    margin: 11vw auto ;
+        }
+        .B2F1 {
+          width: 100%;
+          margin: 0;
+          margin-top: 0;
+          font-size: 6.375vw;
+          line-height: 8.375vw;
+        }
+        .B2F1 span {
+          font-weight: 800 !important;
+        }
+        .B2F2 {
+          width: 79.23076923076923vw;
+          height: 18.974358974358974vw;
+          border-radius: 10vw;
+        }
+        .B2F2 p {
+          font-size: 6.375vw;
+          line-height: 8.375vw;
+          padding-top: 5vw;
+        }
+        .B2F3 {
+          font-size: 4.615384615384616vw;
+          margin-top: 16.41025641025641vw;
+        }
+        .B2F2P {
+          color: #008f39;
+          font-size: 6.375vw;
+          line-height: 8.375vw;
+          font-weight: 500;
+          margin: 0;
+          width: 100%;
+    text-align: left;
+        }
+        .B2SC {
+          padding: 4.76vw 0 4.969vw;
+          flex-direction: column;
+          align-items: center;
+    width: 100%;
+        }
+        .FOO {
+          margin-top: 21.2vw;
+          background: #FA8433;
+          padding: 11.2vw 0;
+        }
+        .FOO1,
+        .FOO2 {
+          margin: auto;
+          width: 57vw;
+        }
+        .FOO a,
+        .FOO p {
+          font-size: 3.75vw;
+          line-height: 4.375vw;
+          margin: 0 0 4vw;
+        }
+        .B2SC.last {
+          display: flex;
+          flex-direction: column;
+          padding: 6.76vw 0 20.76vw;
+        }
+        .B2SC.last .B2F1,
+        .B2SC.last .B2F2P {
+          /*width: 75vw;*/
+          text-align: left;
+        }
+        .B2SC.last .B2F1 {
+          margin-bottom: 3vw;
+        }
+        .FOO1 img {
+          width: 28vw;
+          margin-bottom: 5vw;
+        }
+        .B1F2 p.descr2 {
+    font-weight: 400;
+    font-size: 5.314009661835748vw;
+    margin: 3vw 0 5vw;
+    margin-bottom: 9.903381642512077vw;
+}
+
+.sec2{
+  background-color: #114226;
+  height: fit-content;
+}
+
+.sec1{
+  background-color: #181818;
+}
+
+.tit{
+  color: white;
+  font-size: 4.830917874396135vw;
+  text-align: center;
+  font-weight: bold;
+}
+
+.liga{
+  color: white;
+  font-size: 4vw;
+  text-align: center;
+}
+
+.imgpc{
+  margin-left: 35.02415458937198vw;
+}
+
+.imgpc1{
+  margin-left: 1vw;
+}
+
+.hr{
+  color: #008f39;
+}
+
+.dir{
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 5vw;
+}
+
+.dir1{
+  color: white;
+  text-align: center;
+  font-size:4vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-bottom: 11.352657004830919vw;
+  margin-top: 11.352657004830919vw;
+}
+
+.tel{
+  color: white;
+  text-align: center;
+  font-size: 4vw;
+  margin-bottom: 2vw;
+}
+
+.imglog{
+  margin-top: 15.217391304347828vw;
+  margin-bottom: 6.763285024154589vw;
+}
+
+.descr_dos{
+  border: 0.1vw solid gainsboro;
+  color: #181818;
+  font-size: 5vw;
+}
+
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <div class="B1">
+        <img
+          class="logo"
+          src="../../../../../uploads/images/LogoColor.png"
+
+        />
+        <div class="B1F2"> 
+          <p class="descr">Gracias por suscribirte a nuestro Newsletter</p>
+          <p class="descr2">Espera información y promociones exclusivas antes que nadie</p>
+          <hr>
+          <p class="descr_dos">Correo@correo.com.mx</p>
+
+        <div class="b3">
+          <p class="c1">DD/MM/AAAA</p>
+          <p class="c1">00:00 hrs</p>
+
+        </div>
+
+        </div> 
+      </div> 
+
+      <div class="sec2"> 
+            <!--<img class="logo" src="">-->
+  
+          <div class="sec1"> 
+            <img class="imglog" src="../../../../../uploads/images/logo.png">
+            <p class="tit">SOMA Inmobiliaria</p>
+
+            <p class="liga">www.somainmobiliaria.com</p>
+
+            <div class="sec12">
+
+              <img class="imgpc" src="../../../../../uploads/logo/FB.png">
+              <img class="imgpc1" src="../../../../../uploads/logo/IG.png">
+
+            </div>
+            <hr>
+            <p class="dir">Dirección</p>
+            <p class="dir1">Calle, Número, Colonia, CP
+              Ciudad, Estado</p>
+
+              <p class="tel">Tel. 000 000 00 00</p>
+            <div class="colimg">
+             
+            </div>
+           
+          </div> 
+
+
+      </div>
+    </div>
+  </body>
+</html>
